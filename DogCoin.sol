@@ -58,4 +58,8 @@ contract DogCoin {
 
         emit TransferDogCoin(_amount, _recipient);
     }
+
+    function _mint(uint256 _amount) private onlyOwner {
+        balances[owner] += _amount;
+    }
 }
